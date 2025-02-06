@@ -17,13 +17,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter 30 Widgets',
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          
-        ),
-        home: const FirstPage(),
-      );
+      debugShowCheckedModeBanner: false,
+      title: 'Nanniea',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      home: const FirstPage(),
+    );
   }
 }

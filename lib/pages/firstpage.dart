@@ -15,7 +15,7 @@ class _FirstPageState extends State<FirstPage>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => const MyHomePage()));
     });
@@ -24,10 +24,8 @@ class _FirstPageState extends State<FirstPage>
   @override
   void dispose() {
     super.dispose();
-    SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.manual,
-    overlays: SystemUiOverlay.values
-    );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
   }
 
   @override
@@ -42,16 +40,16 @@ class _FirstPageState extends State<FirstPage>
             ],
           ),
         ),
-        child: Center(
+        child: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                   width: 177,
                   height: 36,
-                  child: const Text(
+                  child: Text(
                     'Nanniea',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
                   ))
             ],
           ),
