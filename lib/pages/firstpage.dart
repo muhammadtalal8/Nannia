@@ -15,9 +15,9 @@ class _FirstPageState extends State<FirstPage>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(milliseconds: 5000), () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const MyHomePage()));
+          MaterialPageRoute(builder: (_) =>  const MyHomePage()));
     });
   }
 
@@ -49,7 +49,7 @@ class _FirstPageState extends State<FirstPage>
                   height: 36,
                   child: Text(
                     'Nanniea',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ))
             ],
           ),
