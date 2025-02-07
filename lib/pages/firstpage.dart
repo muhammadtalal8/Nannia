@@ -4,11 +4,9 @@ import 'package:nanniea/pages/my_home_page.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
-
   @override
   State<FirstPage> createState() => _FirstPageState();
 }
-
 class _FirstPageState extends State<FirstPage>
     with SingleTickerProviderStateMixin {
   @override
@@ -17,10 +15,9 @@ class _FirstPageState extends State<FirstPage>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     Future.delayed(const Duration(milliseconds: 5000), () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) =>  const MyHomePage()));
+          MaterialPageRoute(builder: (_) => const MyHomePage()));
     });
   }
-
   @override
   void dispose() {
     super.dispose();
