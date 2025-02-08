@@ -34,14 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        padding: const EdgeInsets.only(bottom: 80),
-        child: PageView(
-          controller: controller,
-          children: [
-            buildPage(
+    var buildPage2 = buildPage(
               width: 375,
               height: 427,
               alignment: Alignment.topRight,
@@ -59,8 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     right: 0,
                     child: ImageIcon(
                       AssetImage(
-                          'assets/icons/icon1.png'), // Provide the path to your icon image
-                      size: 50,
+                          'assets/icons/icon1.png'),
+                          size: 50,
                       color: Colors.white,
                     ),
                   ),
@@ -69,7 +62,15 @@ class _MyHomePageState extends State<MyHomePage> {
               title: const Text('Discover'),
               subtitle:
                   'Find the perfect nannies in your own neighborhood for your beloved child quickly and easily',
-            ),
+            );
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        padding: const EdgeInsets.only(bottom: 80),
+        child: PageView(
+          controller: controller,
+          children: [
+            buildPage2,
             Container(
               width: 375,
               height: 427,
