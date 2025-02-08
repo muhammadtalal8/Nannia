@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nanniea/pages/my_home_page.dart';
+import 'package:nanniea/pages/onboarding.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -15,7 +15,7 @@ class _FirstPageState extends State<FirstPage>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     Future.delayed(const Duration(milliseconds: 5000), () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const MyHomePage()));
+          MaterialPageRoute(builder: (_) =>  const Onboarding()));
     });
   }
   @override

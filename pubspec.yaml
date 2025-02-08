@@ -37,6 +37,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.7
   smooth_page_indicator: ^1.2.0+3
+  flutter_svg_provider: ^1.0.6
 
 remove_alpha_ios: true
 dev_dependencies:
