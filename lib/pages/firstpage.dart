@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nanniea/pages/onboarding.dart';
-
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
   @override
