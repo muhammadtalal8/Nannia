@@ -3,14 +3,12 @@ class UnbordingContent {
   String title;
   String discription;
   String? subtitle;
-
   UnbordingContent(
       {required this.image,
       required this.title,
       required this.discription,
       this.subtitle});
 }
-
 List<UnbordingContent> contents = [
   UnbordingContent(
       image: 'assets/pages/kid1.png',
