@@ -70,7 +70,7 @@ class _OnboardingState extends State<Onboarding> {
                   ),
                 );
               },
-            ),
+            )
           ),
           Container(
             child: Row(
