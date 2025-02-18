@@ -1,11 +1,9 @@
-
-// ignore_for_file: depend_on_referenced_packages, avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/pages/content_model.dart';
 import 'package:flutter_practice/pages/home.dart';
-
-
+import 'package:svg_flutter/svg.dart';
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
 
