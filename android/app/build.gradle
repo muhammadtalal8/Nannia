@@ -1,18 +1,15 @@
-plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
-def localProperties = new Properties()
+def localProperties = new Properties() //write the keyword new if not already  there
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
-    localProperties.load(reader)
-}
+        localProperties.load(reader)
+    }
 }
 
-
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+   throw FileNotFoundException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
@@ -22,31 +19,34 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
-android {    compileSdkVersion flutter.compileSdkVersion
 
-sourceSets {
-    main.java.srcDirs += 'src/main/kotlin'
-}
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-lintOptions {
-    disable 'InvalidPackage'
-}
+android {
+   namespace "com.webjow.hidden_gallery"
+   compileSdkVersion flutter.compileSdkVersion
+   ndkVersion flutter.ndkVersion
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 
-defaultConfig {
-    // TODO: Specify your own unique Application ID 
-    // (https://developer.android.com/studio/build/application-id.html).
-    applicationId "com.fahad.app"
-    minSdkVersion 21
-    targetSdkVersion flutter.targetSdkVersion
-    versionCode flutterVersionCode.toInteger()
-    versionName flutterVersionName
-}
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.app"
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 28
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
 
-buildTypes {
-    release {
-        // TODO: Add your own signing config for the release build.
-        // Signing with the debug keys for now, so `flutter run --release` works.
-        signingConfig signingConfigs.debug
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
         }
     }
 }
@@ -55,9 +55,14 @@ flutter {
     source '../..'
 }
 
-// See the updated portion of the answer if you're using a more recent version of Flutter and Dart.
-
 dependencies {
-    // Eliminate this line (or the entire dependencies block)
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation 'com.google.firebase:firebase-firestore:20.2.0'
+
 }
+
+apply plugin: 'com.google.gms.google-services'
