@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/pages/firstpage.dart';
-
 void main() {
   runApp(const MyApp());
 }
